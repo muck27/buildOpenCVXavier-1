@@ -158,6 +158,8 @@ time cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D WITH_OPENGL=ON \
       -D CUDA_NVCC_FLAGS="--expt-relaxed-constexpr" \
       -D WITH_TBB=ON \
+      -D BUILD_opencv_dnn=ON \
+
       ../
 
 if [ $? -eq 0 ] ; then
