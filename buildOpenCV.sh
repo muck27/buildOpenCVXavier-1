@@ -65,15 +65,15 @@ if [ $DOWNLOAD_OPENCV_EXTRAS == "YES" ] ; then
 fi
 
 # Repository setup
-sudo apt-add-repository universe
-sudo apt-get update
+apt-add-repository universe
+apt-get update
 
 # Download dependencies for the desired configuration
 cd $WHEREAMI
 # For Ubuntu 18.04, add for OpenGL, ie
 # sudo apt-get install libgl1 libglvnd-dev
  
-sudo apt-get install -y \
+apt-get install -y \
     cmake \
     libavcodec-dev \
     libavformat-dev \
@@ -105,12 +105,12 @@ cd /usr/lib/aarch64-linux-gnu/
 # sudo ln -sf tegra/libGL.so libGL.so
 
 # Python 2.7
-sudo apt-get install -y python-dev python-numpy python-py python-pytest
+apt-get install -y python-dev python-numpy python-py python-pytest
 # Python 3.5
-sudo apt-get install -y python3-dev python3-numpy python3-py python3-pytest
+apt-get install -y python3-dev python3-numpy python3-py python3-pytest
 
 # GStreamer support
-sudo apt-get install -y libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev 
+apt-get install -y libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev 
 
 cd $OPENCV_SOURCE_DIR
 git clone https://github.com/opencv/opencv.git
@@ -192,7 +192,7 @@ else
 fi
 
 echo "Installing ... "
-sudo make install
+make install
 if [ $? -eq 0 ] ; then
    echo "OpenCV installed in: $CMAKE_INSTALL_PREFIX"
 else
